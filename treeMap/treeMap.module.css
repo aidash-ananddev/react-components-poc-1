@@ -1,0 +1,119 @@
+.nodeWrapper {
+  display: flex;
+  justify-content: center;
+  /* height: 200px;
+  overflow: hidden;
+  overflow-y: scroll; */
+}
+
+.column > .nodeContainer:only-child {
+  border: unset;
+  position: sticky;
+  top: 82px;
+}
+
+/* .column:first-child > .nodeContainer {
+  border: unset; 
+} */
+
+.column:first-child > .nodeContainer > .leftBridge {
+  display: none;
+}
+
+.nodeContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-left: 1px solid #c7cedc;
+  /* position: sticky;
+  top: 0; */
+}
+
+.nodeContainer:first-child {
+  border-left: 1px solid #c7cedc;
+  position: relative;
+  border-image: linear-gradient(
+    180deg,
+    transparent calc(50% - 1px),
+    #c7cedc 0,
+    #c7cedc 100%,
+    transparent 0
+  );
+  border-image-slice: 1;
+}
+
+.nodeContainer:last-child {
+  border-left: 1px solid #c7cedc;
+  position: relative;
+  border-image: linear-gradient(
+    180deg,
+    transparent 0,
+    #c7cedc 0,
+    #c7cedc 50%,
+    transparent 50.5%
+  );
+  border-image-slice: 1;
+}
+
+.leftBridge,
+.rightBridge {
+  width: 35px;
+  height: 0;
+  border-top: 1px solid #c7cedc;
+  position: relative;
+  top: 50%;
+}
+
+.leftBridge::before {
+  content: '';
+  border-radius: 50%;
+  height: 6px;
+  width: 6px;
+  background-size: 6px;
+  display: inline-block;
+  background-color: #c7cedc;
+  position: relative;
+  bottom: 13px;
+  left: -3.5px;
+}
+
+div.activeNode {
+  background-color: #786944;
+}
+
+.activeNode + .rightBridge {
+  visibility: visible;
+}
+
+.nodeName {
+  padding: 4px;
+  /* border: 1px solid #e0e0e0; */
+  border-radius: 5px;
+  width: 100%;
+  margin: 4px 0;
+  font-size: 12px;
+  line-height: 15px;
+  min-width: 200px;
+  background-color: #1857a5;
+  color: #fff;
+}
+
+.rightBridge {
+  visibility: hidden;
+}
+
+.verticalDots {
+  width: 15px;
+  height: 15px;
+  background-image: radial-gradient(circle, red 1px, transparent 2px);
+  background-size: 100% 33.33%;
+}
+
+/* 
+gold: #786944
+blue: #1857a5
+green: #0a855b
+gray: #525252 
+border: #e2e2e2
+
+*/
